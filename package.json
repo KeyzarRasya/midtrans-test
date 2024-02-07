@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npm run build-nodemon && npm run build-tw",
     "build-tw": "npx tailwindcss -i ./views/input.css -o ./views/output.css --watch",
-    "build-nodemon": "nodemon server.js"
+    "build-nodemon": "nodemon index.js"
   },
   "keywords": [],
   "author": "",

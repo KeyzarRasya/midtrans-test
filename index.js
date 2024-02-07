@@ -11,6 +11,7 @@ app.use(express.urlencoded({extended:true}))
 app.use(cors())
 app.use(express.static("views"))
 app.set("view engine", "ejs")
+app.set('views', path.join(__dirname, 'views'));
 
 
 let snap = new midtransClient.Snap({
@@ -48,6 +49,6 @@ app.get("/", (req, res)=> {
     res.render("home")
 })
 
-app.listen(3000, () => {
+app.listen(3000,'0.0.0.0', () => {
     console.log("running")
 })
