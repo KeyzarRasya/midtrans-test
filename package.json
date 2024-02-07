@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "css": "npx tailwindcss -i ./views/input.css -o ./views/output.css --watch",
-    "dev": "nodemon server.js",
-    "build": "npm run dev && npm run css"
+    "build": "npm run build-nodemon && npm run build-tw",
+    "build-tw": "npx tailwindcss -i ./views/input.css -o ./views/output.css --watch",
+    "build-nodemon": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
