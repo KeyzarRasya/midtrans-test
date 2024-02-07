@@ -50,6 +50,14 @@ app.get("/", (req, res)=> {
     res.render("home")
 })
 
+app.post("/status", (req, res) => {
+    res.send(req)
+})
+
+app.post("/finish", (req, res) => {
+    res.send("You have finished transaction")
+})
+
 app.listen(3000,'0.0.0.0', () => {
     console.log("running")
 })
