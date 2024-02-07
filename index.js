@@ -54,7 +54,7 @@ app.post("/status", (req, res) => {
     res.send(req)
 })
 
-app.post("/finish", (req, res) => {
+app.get("/finish", (req, res) => {
     res.send("You have finished transaction")
 })
 
