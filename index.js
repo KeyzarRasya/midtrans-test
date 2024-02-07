@@ -56,7 +56,7 @@ app.post("/status", (req, res) => {
 
 app.get("/finish", (req, res) => {
     const {order_id, status_code, transaction_status} = req.query;
-    res.json({order_id, status_code, transaction_status})
+    res.send(order_id)
 })
 
 app.listen(3000,'0.0.0.0', () => {
