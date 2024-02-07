@@ -1,0 +1,26 @@
+{
+  "name": "pgateaway",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "css": "npx tailwindcss -i ./views/input.css -o ./views/output.css --watch",
+    "dev": "nodemon server.js",
+    "build": "npm run dev && npm run css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "midtrans-client": "^1.3.1",
+    "nodemon": "^3.0.3",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}
