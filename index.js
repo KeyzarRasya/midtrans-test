@@ -4,6 +4,7 @@ const midtransClient = require('midtrans-client')
 const cors = require("cors")
 const path = require("path")
 const {v4:uuid}  = require("uuid")
+const [checkStatus] = require("./middleware/validation")
 
 const app = express()
 
@@ -55,8 +56,11 @@ app.post("/status", (req, res) => {
 })
 
 app.get("/finish", (req, res) => {
-    const {order_id, status_code, transaction_status} = req.query;
-    res.send(order_id)
+    if(req.midtrans.payment.status_code === 201){
+        res.render("pending", {transaction:req.midtrans.payment})
+    }else if(res.midtrans.payment.status_code === 200){
+        res.render("finish")
+    }
 })
 
 app.listen(3000,'0.0.0.0', () => {
