@@ -12,7 +12,7 @@ const checkStatus = (req, res, next) => {
             Authorization:`Basic ${base64}`
         }
     }).then(response => {
-        req.midtrans.payment = response;
+        req.midtrans.payment = response.data;
         next();
     }).catch(err => console.error(err))
 }
