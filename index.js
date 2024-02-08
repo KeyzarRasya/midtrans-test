@@ -56,11 +56,7 @@ app.post("/status", (req, res) => {
 })
 
 app.get("/finish", checkStatus, (req, res) => {
-    if(req.midtrans.status_code === 201){
-        res.render("pending", {transaction:req.midtrans})
-    }else if(req.midtrans.status_code === 200){
-        res.render("finish")
-    }
+    res.render("finish");
 })
 
 app.listen(3000,'0.0.0.0', () => {
