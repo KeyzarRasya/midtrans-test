@@ -56,7 +56,7 @@ app.post("/status", (req, res) => {
 })
 
 app.get("/finish", checkStatus, (req, res) => {
-    res.render("finish");
+    res.render("Finish")
 })
 
 app.listen(3000,'0.0.0.0', () => {
