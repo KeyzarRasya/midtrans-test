@@ -55,7 +55,7 @@ app.post("/status", (req, res) => {
     res.send(req)
 })
 
-app.get("/finish", (req, res) => {
+app.get("/finish", checkStatus, (req, res) => {
     if(req.midtrans.payment.status_code === 201){
         res.render("pending", {transaction:req.midtrans.payment})
     }else if(res.midtrans.payment.status_code === 200){
