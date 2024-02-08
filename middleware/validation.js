@@ -3,7 +3,8 @@ require("dotenv").config()
 
 
 const checkStatus = (req, res, next) => {
-    const url = `https://api.sandbox.midtrans.com/v2/${req.query.order_id}/status`
+    const {order_id} = req.query
+    const url = `https://api.sandbox.midtrans.com/v2/${order_id}/status`
     const base64 = btoa(process.env.SERVER_KEY)
     axios.get(url, {
         method:"GET",
@@ -12,7 +13,7 @@ const checkStatus = (req, res, next) => {
             Authorization:`Basic ${base64}`
         }
     }).then(response => {
-        req.midtrans.payment = response.data;
+        req.midtrans = response.data;
         next();
     }).catch(err => console.error(err))
 }
