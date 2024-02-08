@@ -15,7 +15,7 @@ const checkStatus = (req, res, next) => {
     }).then(response => {
         req.midtrans = response.data;
         console.log(req.midtrans)
-        if(response.data.status_code === 200){
+        if(response.data.status_code === '200'){
             return next()
         }
         res.render("pending")
